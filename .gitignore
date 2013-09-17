@@ -7,3 +7,7 @@
 /build
 /mathquill-*.tgz
 /mathquill.github.com
+
+# tenmarks
+.DS_Store
+.project
