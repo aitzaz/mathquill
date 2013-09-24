@@ -148,9 +148,10 @@ function createRoot(jQ, root, textbox, editable) {
       if (text.slice(0,1) === '$' && text.slice(-1) === '$') {
         text = text.slice(1, -1);
       }
-      else {
-        text = '\\text{' + text + '}';
-      }
+// Removed \text from to pasted text 
+//      else {
+//        text = '\\text{' + text + '}';
+//      }
 
       cursor.writeLatex(text).show();
     }
@@ -222,11 +223,9 @@ var RootMathBlock = P(MathBlock, function(_, _super) {
     // Tab or Esc -> go one block right if it exists, else escape right.
     case 'Esc':
     case 'Tab':
-    case 'Shift-4':
     case 'Spacebar':
-      // Prevent Shift-4 ($) which creates \text
       // Prevent Spacebar which will tab out fields
-      if (key ==="Spacebar" || key === "Shift-4") {
+      if (key ==="Spacebar") {
         e.preventDefault();
         return;
       }

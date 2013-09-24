@@ -8,6 +8,6 @@
 /mathquill-*.tgz
 /mathquill.github.com
 
-# tenmarks
+# eclipse
 .DS_Store
 .project
