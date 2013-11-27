@@ -21,7 +21,14 @@ function createRoot(jQ, root, textbox, editable) {
   root.renderLatex(contents.text());
 
   //textarea stuff
-  var textareaSpan = root.textarea = $('<span class="textarea"><textarea></textarea></span>'),
+  var nodeHtml = '';
+  if (navigator.userAgent.match(/Android/i)) {
+	nodeHtml = '<span class="textarea"><input type="password" /></span>';
+  }
+  else {
+	nodeHtml = '<span class="textarea"><textarea></textarea></span>';
+  }
+  var textareaSpan = root.textarea = $(nodeHtml),
     textarea = textareaSpan.children();
 
   /******
